@@ -1,0 +1,14 @@
+<h1>Super great blog website!</h1>
+<h3><%= link_to 'Make a New Blog Post', new_post_path %></h3>
+<br>
+<h2>Current Posts: <%=@posts.count%> total.</h2>
+
+<%= @posts.each do |p| %>
+<div class="">
+  <h3>~<%=link_to p.title, show_post_path(id: p.id) %>~</h3>
+  <h5>by: <%=p.author %></h5>
+  <p><%=p.body %></p>
+</div>
+<br>
+<br>
+<% end %>
